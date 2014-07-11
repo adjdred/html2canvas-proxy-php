@@ -14,7 +14,7 @@ $callback = $_GET['callback'];
 // Retrieve file details
 $file_details = get_url_details($url, 1, $callback);
 
-if (!in_array($file_details["mime_type"], array("image/jpg", "image/png")))
+if (!in_array($file_details["mime_type"], array("image/jpg", "image/jpeg", "image/png")))
 {
     print "error:Application error";
 } else
@@ -43,7 +43,7 @@ function get_url_details($url, $attempt = 1, $callback = "")
 
     $mime_type = curl_getinfo($ch, CURLINFO_CONTENT_TYPE);
 
-    if (!in_array($mime_type, array("image/jpg", "image/png")) && $max_attempts != $attempt)
+    if (!in_array($mime_type, array("image/jpg", "image/jpeg", "image/png")) && $max_attempts != $attempt)
     {
         return get_url_details($url, $attempt++, $callback);
     }
