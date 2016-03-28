@@ -4,7 +4,7 @@ header('Access-Control-Max-Age:' . 5 * 60 * 1000);
 header("Access-Control-Allow-Origin: *");
 header('Access-Control-Request-Method: *');
 header('Access-Control-Allow-Methods: OPTIONS, GET');
-header('Access-Control-Allow-Headers *');
+header('Access-Control-Allow-Headers: *');
 header("Content-Type: application/javascript");
 
 // Url params
